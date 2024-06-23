@@ -1,0 +1,224 @@
+from django.contrib import admin
+from .models import (
+    Skyd1Reading,
+    Utility1st2ndFS2Reading,
+    SpareStation3Reading,
+    ThirdFloorZohoS4Reading,
+    SixthFloorS5Reading,
+    SpareS6Reading,
+    SpareS7Reading,
+    ThirdFifthFloorKotakReading,
+    DG2S3Reading,
+    EBS10Reading,
+    APFCS11Reading,
+    DG1S12Reading,
+    SolarS13Reading,
+)
+
+
+class BaseAdmin(admin.ModelAdmin):
+    list_display = ('timestamp', 'sub_device_id')
+    list_filter = ('timestamp', 'sub_device_id')
+    search_fields = ('sub_device_id',)
+    ordering = ('-timestamp',)
+    date_hierarchy = 'timestamp'
+    fieldsets = (
+        (None, {
+            'fields': ('timestamp', 'sub_device_id')
+        }),
+    )
+
+
+@admin.register(Skyd1Reading)
+class Skyd1ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(Utility1st2ndFS2Reading)
+class Utility1st2ndFS2ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(SpareStation3Reading)
+class SpareStation3ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(ThirdFloorZohoS4Reading)
+class ThirdFloorZohoS4ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(SixthFloorS5Reading)
+class SixthFloorS5ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(SpareS6Reading)
+class SpareS6ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(SpareS7Reading)
+class SpareS7ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(ThirdFifthFloorKotakReading)
+class ThirdFifthFloorKotakReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Voltage', {
+            'fields': ('ln_avg_voltage', 'rn_voltage', 'yn_voltage', 'bn_voltage')
+        }),
+        ('Current', {
+            'fields': ('avg_current', 'r_current', 'y_current', 'b_current')
+        }),
+        ('Other', {
+            'fields': ('hz', 'kwh_eb', 'kvah_eb', 'kwh_dg', 'kvah_dg')
+        }),
+    )
+
+
+@admin.register(DG2S3Reading)
+class DG2S3ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Current', {
+            'fields': ('phase_1_current', 'phase_2_current', 'phase_3_current', 'average_current')
+        }),
+        ('Voltage', {
+            'fields': ('v1_voltage', 'v2_voltage', 'v3_voltage', 'ln_voltage')
+        }),
+        ('Energy', {
+            'fields': ('kwh', 'kvah')
+        }),
+    )
+
+
+@admin.register(EBS10Reading)
+class EBS10ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Current', {
+            'fields': ('phase_1_current', 'phase_2_current', 'phase_3_current', 'average_current')
+        }),
+        ('Voltage', {
+            'fields': ('v1_voltage', 'v2_voltage', 'v3_voltage', 'ln_voltage')
+        }),
+        ('Energy', {
+            'fields': ('kwh', 'kvah')
+        }),
+    )
+
+
+@admin.register(APFCS11Reading)
+class APFCS11ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Current', {
+            'fields': ('phase_1_current', 'phase_2_current', 'phase_3_current', 'average_current')
+        }),
+        ('Voltage', {
+            'fields': ('v1_voltage', 'v2_voltage', 'v3_voltage', 'ln_voltage')
+        }),
+        ('Energy', {
+            'fields': ('kwh', 'kvah')
+        }),
+    )
+
+
+@admin.register(DG1S12Reading)
+class DG1S12ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Current', {
+            'fields': ('phase_1_current', 'phase_2_current', 'phase_3_current', 'average_current')
+        }),
+        ('Voltage', {
+            'fields': ('v1_voltage', 'v2_voltage', 'v3_voltage', 'ln_voltage')
+        }),
+        ('Energy', {
+            'fields': ('kwh', 'kvah')
+        }),
+    )
+
+
+@admin.register(SolarS13Reading)
+class SolarS13ReadingAdmin(BaseAdmin):
+    fieldsets = BaseAdmin.fieldsets + (
+        ('Current', {
+            'fields': ('phase_1_current', 'phase_2_current', 'phase_3_current', 'average_current')
+        }),
+        ('Voltage', {
+            'fields': ('v1_voltage', 'v2_voltage', 'v3_voltage', 'ln_voltage')
+        }),
+        ('Energy', {
+            'fields': ('kwh', 'kvah')
+        }),
+    )
