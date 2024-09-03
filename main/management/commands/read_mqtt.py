@@ -28,7 +28,7 @@ class Command(BaseCommand):
         # MQTT broker details
         broker = "broker.hivemq.com"
         port = 1883
-        client_id = "asdas"  # Ensure this is unique for your client
+        client_id = "UppalClient"  # Ensure this is unique for your client
         username = "admin"  # Public broker usually doesn't need this
         password = "admin"  # Public broker usually doesn't need this
 

@@ -3,7 +3,7 @@ import paho.mqtt.client as mqtt
 # MQTT broker details
 broker = "broker.hivemq.com"
 port = 1883
-client_id = "asdas"  # Ensure this is unique for your client
+client_id = "Uppalmqttclient1250"  # Ensure this is unique for your client
 username = "admin"  # Public broker usually doesn't need this
 password = "admin"  # Public broker usually doesn't need this
 
